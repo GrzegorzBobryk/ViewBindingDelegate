@@ -32,7 +32,21 @@ Remember to **not** call binder object from `onDestroyView()` event because it w
 
 ## Examples
 
-You can find them in sample module
+You can find them in sample module. Here you have quick usage:
+
+```kotlin
+class ExampleFragment : Fragment(R.layout.fragment_example) {
+    //simple binding
+    private val binding by viewBinding(FragmentExampleBinding::bind)
+
+    //binding with setting up DataBinding variables
+    private val binding by viewBinding {
+        FragmentExampleBinding.bind(it).also { binding ->
+            binding.text = getString(R.string.example)
+        }
+    }
+}
+```
 
 [//]: # (variable definitions)
 
