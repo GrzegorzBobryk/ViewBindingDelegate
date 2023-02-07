@@ -7,7 +7,24 @@ You probably seen already similar approaches in some tutorials. I can not find r
 
 ## Setup
 
-TBD
+Add it in root `build.gradle`
+
+```gradle
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+and the dependency itself
+
+```gradle
+	dependencies {
+	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0'
+	}
+```
 
 ## Warning
 
