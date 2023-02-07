@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import pl.beavercoding.viewbinder.viewBinding
+import pl.beavercoding.view_binder.viewBinding
 import pl.beavercoding.viewbindingdelegate.databinding.FragmentExample3Binding
 
 class ExampleFragment3 : Fragment(R.layout.fragment_example_3) {

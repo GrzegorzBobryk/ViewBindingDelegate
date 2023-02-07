@@ -1,4 +1,4 @@
-package pl.beavercoding.viewbinder
+package pl.beavercoding.view_binder
 
 import android.os.Looper
 import android.view.View
@@ -56,3 +56,4 @@ fun interface ViewBinder<T : ViewBinding> {
 @Suppress("unused")
 inline fun <reified T : ViewBinding> Fragment.viewBinding(vb: ViewBinder<T>): ReadOnlyProperty<Fragment, T> =
     FragmentViewBindingProperty(vb)
+

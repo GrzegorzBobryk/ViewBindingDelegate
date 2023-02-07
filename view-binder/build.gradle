@@ -1,11 +1,11 @@
 plugins {
     id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
     id 'maven-publish'
 }
 
 android {
-    namespace 'pl.beavercoding.viewbinder'
+    namespace 'pl.beavercoding.view_binder'
     compileSdk 33
 
     defaultConfig {
@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -29,10 +29,8 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
     buildFeatures {
         viewBinding true
-        dataBinding true
     }
 }
 
@@ -47,7 +45,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.github.grzegorzbobryk'
-                artifactId = 'viewbinder'
+                artifactId = 'view-binder'
                 version = '1.0'
             }
         }
