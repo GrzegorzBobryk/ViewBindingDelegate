@@ -22,7 +22,7 @@ and the dependency itself
 
 ```gradle
 	dependencies {
-	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0.1'
+	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0.2'
 	}
 ```
 
@@ -32,7 +32,7 @@ Remember to **not** call binder object from `onDestroyView()` event because it w
 
 ## Examples
 
-You can find them in app module
+You can find them in sample module
 
 [//]: # (variable definitions)
 

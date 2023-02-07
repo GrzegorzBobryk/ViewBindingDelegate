@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ViewBindingDelegate</string>
+    <string name="next">next</string>
+    <string name="example_1">Screen with ViewBinding</string>
+    <string name="example_2">Screen with DataBinding</string>
+    <string name="example_3">Screen with ViewBinding and something important in onCreateView</string>
+</resources>

@@ -21,6 +21,6 @@ class ExampleFragment3 : Fragment(R.layout.fragment_example_3) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.helloWorld.text = "Hello world"
+        binding.helloWorld.text = getString(R.string.example_3)
     }
 }

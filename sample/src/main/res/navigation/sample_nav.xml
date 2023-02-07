@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sample_nav"
+    app:startDestination="@id/example_fragment_1">
+
+    <fragment
+        android:id="@+id/example_fragment_1"
+        android:name="pl.beavercoding.viewbindingdelegate.ExampleFragment1"
+        android:label="ExampleFragment1"
+        tools:layout="@layout/fragment_example_1">
+        <action
+            android:id="@+id/to_example_fragment_2"
+            app:destination="@id/example_fragment_2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/example_fragment_2"
+        android:name="pl.beavercoding.viewbindingdelegate.ExampleFragment2"
+        android:label="ExampleFragment2"
+        tools:layout="@layout/fragment_example_2">
+        <action
+            android:id="@+id/to_example_fragment_3"
+            app:destination="@id/example_fragment_3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/example_fragment_3"
+        android:name="pl.beavercoding.viewbindingdelegate.ExampleFragment3"
+        android:label="ExampleFragment3"
+        tools:layout="@layout/fragment_example_3" />
+</navigation>
