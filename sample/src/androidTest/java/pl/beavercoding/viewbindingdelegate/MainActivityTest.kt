@@ -32,7 +32,7 @@ class MainActivityTest {
 
         val textView = onView(
             allOf(
-                withId(R.id.hello_world), withText("Screen with ViewBinding"),
+                withId(R.id.hello_world), withText(resources.getString(R.string.example_1)),
                 withParent(withParent(withId(R.id.nav_host_fragment))),
                 isDisplayed()
             )
@@ -62,7 +62,7 @@ class MainActivityTest {
                 isDisplayed()
             )
         )
-        textView2.check(matches(withText("Screen with DataBinding")))
+        textView2.check(matches(withText(resources.getString(R.string.example_2))))
 
         val materialButton2 = onView(
             allOf(
@@ -86,7 +86,7 @@ class MainActivityTest {
                 isDisplayed()
             )
         )
-        textView3.check(matches(withText("Screen with ViewBinding and something important in onCreateView")))
+        textView3.check(matches(withText(resources.getString(R.string.example_3))))
     }
 
     private fun childAtPosition(
