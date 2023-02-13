@@ -12,6 +12,7 @@ object Libs {
         const val appcompat = "androidx.appcompat:appcompat:1.6.0"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
         const val viewBinding = "androidx.databinding:viewbinding:$androidGradlePluginVersion"
+        const val recyclerView = "androidx.recyclerview:recyclerview:1.2.1"
 
 
         object Navigation {

@@ -37,6 +37,7 @@ android {
 dependencies {
     implementation Libs.Androidx.appcompat
     implementation Libs.Androidx.viewBinding
+    implementation Libs.Androidx.recyclerView
 }
 
 afterEvaluate {

@@ -48,6 +48,23 @@ class ExampleFragment : Fragment(R.layout.fragment_example) {
 }
 ```
 
+You can also use `safeSetAdapter` to automatically clean adapter reference from fragment
+
+```kotlin
+class ExampleFragment1 : Fragment(R.layout.fragment_example) {
+    private val binding by viewBinding(FragmentExampleBinding::bind)
+    private val adapter by lazy { ExampleAdapter(::handleExampleClick) }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //calling extension function
+        binding.list.safeSetAdapter(adapter)
+        adapter.submitList(list)
+    }
+}
+```
+
 [//]: # (variable definitions)
 
 [data]: <https://developer.android.com/topic/libraries/data-binding>
