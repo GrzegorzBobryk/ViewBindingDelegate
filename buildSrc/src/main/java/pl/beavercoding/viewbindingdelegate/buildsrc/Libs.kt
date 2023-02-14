@@ -40,4 +40,11 @@ object Libs {
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
     }
 
+    object CanaryLeak {
+        private const val version = "2.10"
+
+        const val android = "com.squareup.leakcanary:leakcanary-android:$version"
+        const val androidTests = "com.squareup.leakcanary:leakcanary-android-instrumentation:$version"
+    }
+
 }

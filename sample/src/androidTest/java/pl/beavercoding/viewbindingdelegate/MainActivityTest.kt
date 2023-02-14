@@ -1,6 +1,5 @@
 package pl.beavercoding.viewbindingdelegate
 
-
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
@@ -11,6 +10,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.platform.app.InstrumentationRegistry
+import leakcanary.LeakAssertions
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
@@ -82,6 +82,7 @@ class MainActivityTest {
             )
         )
         textView3.check(matches(withText(resources.getString(R.string.example_3))))
+        LeakAssertions.assertNoLeaks()
     }
 
     private fun childAtPosition(

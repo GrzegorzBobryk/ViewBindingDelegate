@@ -57,6 +57,10 @@ dependencies {
     implementation Libs.Androidx.Navigation.ui
     implementation Libs.Androidx.Navigation.fragment
 
+    //leakcanary
+    debugImplementation Libs.CanaryLeak.android
+    androidTestImplementation Libs.CanaryLeak.androidTests
+
     //tests
     testImplementation Libs.junit
     androidTestImplementation Libs.Androidx.Test.junitExt
