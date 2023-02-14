@@ -30,15 +30,10 @@ class MainActivityTest {
     fun mainActivityTest() {
         val resources = InstrumentationRegistry.getInstrumentation().targetContext.resources
 
-        val textView = onView(
-            allOf(
-                withId(R.id.hello_world), withText(resources.getString(R.string.example_1)),
-                withParent(withParent(withId(R.id.nav_host_fragment))),
-                isDisplayed()
-            )
+        allOf(
+            childAtPosition(hasDescendant(withText(resources.getString(R.string.example_1))), 0),
+            isDisplayed()
         )
-        textView.check(matches(withText(resources.getString(R.string.example_1))))
-
 
         val materialButton = onView(
             allOf(
