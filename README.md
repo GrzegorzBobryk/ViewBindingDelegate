@@ -22,7 +22,7 @@ and the dependency itself
 
 ```gradle
 	dependencies {
-	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0.3'
+	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0.4'
 	}
 ```
 
