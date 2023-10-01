@@ -48,7 +48,7 @@ class ExampleFragment : Fragment(R.layout.fragment_example) {
 }
 ```
 
-You can also use `safeSetAdapter` to automatically clean adapter reference from fragment
+You can also use `safeSetAdapter` to automatically clean adapter reference from fragment. Do **not** call it from pagers.
 
 ```kotlin
 class ExampleFragment1 : Fragment(R.layout.fragment_example) {

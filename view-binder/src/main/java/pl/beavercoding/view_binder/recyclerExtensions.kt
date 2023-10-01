@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 /**
- * Safe setting new [RecyclerView.Adapter] that is leak resistant
+ * Safe setting new [RecyclerView.Adapter] that is leak resistant. Do NOT call it from pagers.
  */
 fun <VH : RecyclerView.ViewHolder> RecyclerView.safeSetAdapter(
     adapter: RecyclerView.Adapter<VH>
