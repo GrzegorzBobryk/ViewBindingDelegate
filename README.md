@@ -1,8 +1,11 @@
 # ViewBindingDelegate
 
+[![](https://jitpack.io/v/GrzegorzBobryk/ViewBindingDelegate.svg)](https://jitpack.io/#GrzegorzBobryk/ViewBindingDelegate)
+
 ## What is it?
 
-_Library created to enable easy to use, reflection free, lazy initialisation with auto destruction on lifecycle of [data] and [view] binders._
+_Library created to enable easy to use, reflection free, lazy initialisation with auto destruction on lifecycle of [data]
+and [view] binders._
 You probably seen already similar approaches in some tutorials. I can not find ready to use lib like that.
 
 ## Setup
