@@ -22,7 +22,7 @@ and the dependency itself
 
 ```gradle
 	dependencies {
-	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0.3'
+	        implementation 'com.github.GrzegorzBobryk:ViewBindingDelegate:1.0.4'
 	}
 ```
 
@@ -48,7 +48,7 @@ class ExampleFragment : Fragment(R.layout.fragment_example) {
 }
 ```
 
-You can also use `safeSetAdapter` to automatically clean adapter reference from fragment
+You can also use `safeSetAdapter` to automatically clean adapter reference from fragment. Do **not** call it from pagers.
 
 ```kotlin
 class ExampleFragment1 : Fragment(R.layout.fragment_example) {

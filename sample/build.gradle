@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace 'pl.beavercoding.viewbindingdelegate'
-    compileSdkVersion Config.compileSdk
+    compileSdk Config.compileSdk
 
     defaultConfig {
         applicationId "pl.beavercoding.viewbindingdelegate"
@@ -24,16 +24,17 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures {
         viewBinding true

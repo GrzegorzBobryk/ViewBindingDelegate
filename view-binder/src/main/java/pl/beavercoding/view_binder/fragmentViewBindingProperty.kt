@@ -53,7 +53,7 @@ fun interface ViewBinder<T : ViewBinding> {
 /**
  * Lazy create new [ViewBinding] associated with the [Fragment][this] via delegate without any reflection.
  */
-@Suppress("unused")
+@Suppress("UnusedReceiverParameter")
 inline fun <reified T : ViewBinding> Fragment.viewBinding(vb: ViewBinder<T>): ReadOnlyProperty<Fragment, T> =
     FragmentViewBindingProperty(vb)
 
