@@ -2,7 +2,6 @@
 fill
 
 ## Issue ticket number and link
-
 N/A
 
 ## Checklist
