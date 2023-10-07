@@ -1,0 +1,16 @@
+name: Set up environment for Android build
+description: Set up environment for Android build
+
+runs:
+  using: composite
+  steps:
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'corretto'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      shell: bash
+      run: chmod +x gradlew
