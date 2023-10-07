@@ -48,4 +48,10 @@ object Libs {
         const val androidTests = "com.squareup.leakcanary:leakcanary-android-instrumentation:$version"
     }
 
+    object Detekt {
+        private const val version = "1.23.1"
+        const val detektGradlePlugin = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$version"
+        const val detektFormatting = "io.gitlab.arturbosch.detekt:detekt-formatting:$version"
+    }
+
 }

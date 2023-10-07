@@ -1,0 +1,4 @@
+formatting:
+  MaximumLineLength:
+    active: true
+    maxLineLength: 130
