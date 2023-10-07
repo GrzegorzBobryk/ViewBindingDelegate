@@ -36,6 +36,7 @@ allprojects {
     }
 
     detekt {
+        debug = true
         allRules = false
         parallel = true
         config.setFrom(files("$rootDir/config/detekt.yml"))
