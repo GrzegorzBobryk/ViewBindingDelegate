@@ -22,6 +22,10 @@ allprojects {
         google()
         mavenCentral()
     }
+
+    ktlint {
+        debug.set(true)
+    }
 }
 
 task clean(type: Delete) {
