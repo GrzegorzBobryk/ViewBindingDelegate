@@ -47,4 +47,16 @@ object Libs {
         const val androidTests = "com.squareup.leakcanary:leakcanary-android-instrumentation:$version"
     }
 
+    object Ktlint {
+        const val ktlintGradlePlugin = "org.jlleitschuh.gradle:ktlint-gradle:11.6.0"
+        const val ktlintPlugin = "org.jlleitschuh.gradle.ktlint"
+    }
+
+    object Detekt {
+        private const val version = "1.23.1"
+        const val detektGradlePlugin = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$version"
+        const val detektFormatting = "io.gitlab.arturbosch.detekt:detekt-formatting:$version"
+        const val detektPlugin = "io.gitlab.arturbosch.detekt"
+    }
+
 }

@@ -5,8 +5,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import pl.beavercoding.view_binder.safeSetAdapter
-import pl.beavercoding.view_binder.viewBinding
+import pl.beavercoding.viewBinder.safeSetAdapter
+import pl.beavercoding.viewBinder.viewBinding
 import pl.beavercoding.viewbindingdelegate.databinding.FragmentExample1Binding
 
 class ExampleFragment1 : Fragment(R.layout.fragment_example_1) {
@@ -19,9 +19,9 @@ class ExampleFragment1 : Fragment(R.layout.fragment_example_1) {
 
         binding.list.safeSetAdapter(adapter)
         val list = listOf(
-            Example(1, getString(R.string.example_1)),
-            Example(2, getString(R.string.example_1)),
-            Example(3, getString(R.string.example_1))
+            Example(R.id.first, getString(R.string.example_1)),
+            Example(R.id.second, getString(R.string.example_1)),
+            Example(R.id.third, getString(R.string.example_1))
         )
         adapter.submitList(list)
 

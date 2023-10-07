@@ -1,4 +1,6 @@
-package pl.beavercoding.view_binder
+@file:Suppress("Filename")
+
+package pl.beavercoding.viewBinder
 
 import android.os.Looper
 import android.view.View
@@ -13,7 +15,8 @@ import kotlin.reflect.KProperty
 
 /**
  * Property that create, hold and destroy binder object. It must be used from ui thread.
- * Remember to <strong>not</strong> call binder object from [onDestroyView()] event because it will cause recreation and memory leak.
+ * Remember to <strong>not</strong> call binder object from [onDestroyView()] event
+ * because it will cause recreation and memory leak.
  */
 class FragmentViewBindingProperty<T : ViewBinding>(
     private val viewBinder: ViewBinder<T>
@@ -29,13 +32,11 @@ class FragmentViewBindingProperty<T : ViewBinding>(
         return viewBinder.bind(view).also { vb -> viewBinding = vb }
     }
 
-    private fun notMainThread() = Looper.getMainLooper().thread !== Thread.currentThread()
-
     private fun assertMainThread() {
-        if (notMainThread()) {
-            throw RuntimeException("View binder called outside of mine thread!")
-        }
+        check(isMainThread()) { "View binder called outside of mine thread!" }
     }
+
+    private fun isMainThread() = Looper.getMainLooper().thread === Thread.currentThread()
 
     private inner class BindingLifecycleObserver : DefaultLifecycleObserver {
 
@@ -56,4 +57,3 @@ fun interface ViewBinder<T : ViewBinding> {
 @Suppress("UnusedReceiverParameter")
 inline fun <reified T : ViewBinding> Fragment.viewBinding(vb: ViewBinder<T>): ReadOnlyProperty<Fragment, T> =
     FragmentViewBindingProperty(vb)
-

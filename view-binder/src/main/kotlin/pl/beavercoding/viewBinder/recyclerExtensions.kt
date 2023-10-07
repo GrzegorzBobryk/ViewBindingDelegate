@@ -1,4 +1,6 @@
-package pl.beavercoding.view_binder
+@file:Suppress("Filename")
+
+package pl.beavercoding.viewBinder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

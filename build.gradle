@@ -1,3 +1,4 @@
+import io.gitlab.arturbosch.detekt.Detekt
 import pl.beavercoding.viewbindingdelegate.buildsrc.Libs
 
 buildscript {
@@ -12,13 +13,45 @@ buildscript {
         classpath Libs.androidGradlePlugin
         classpath Libs.Kotlin.gradlePlugin
         classpath Libs.Androidx.Navigation.safeArgsPlugin
+        classpath Libs.Ktlint.ktlintGradlePlugin
+        classpath Libs.Detekt.detektGradlePlugin
     }
 }
 
 allprojects {
+    apply plugin: Libs.Ktlint.ktlintPlugin
+    apply plugin: Libs.Detekt.detektPlugin
+
     repositories {
         google()
         mavenCentral()
+    }
+
+    dependencies {
+        detektPlugins(Libs.Detekt.detektFormatting)
+    }
+
+    ktlint {
+        debug.set(true)
+    }
+
+    detekt {
+        debug = true
+        allRules = false
+        parallel = true
+        config.setFrom(files("$rootDir/config/detekt.yml"))
+        buildUponDefaultConfig = true
+        ignoredBuildTypes = ["release"]
+    }
+}
+
+tasks.withType(Detekt).configureEach {
+    reports {
+        html.required.set(true)
+        xml.required.set(false)
+        txt.required.set(false)
+        sarif.required.set(false)
+        md.required.set(false)
     }
 }
 

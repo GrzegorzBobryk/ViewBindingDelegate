@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace 'pl.beavercoding.view_binder'
+    namespace 'pl.beavercoding.viewBinder'
     compileSdk Config.compileSdk
 
     defaultConfig {

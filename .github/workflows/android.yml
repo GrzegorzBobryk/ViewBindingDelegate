@@ -12,6 +12,10 @@ jobs:
         uses: ./.github/actions/prepare-env
       - name: Lint
         run: ./gradlew lintDebug
+      - name: Ktlint
+        run: ./gradlew ktlintCheck
+      - name: Detekt
+        run: ./gradlew detekt
       - name: Build with Gradle
         run: ./gradlew buildDebug
   instrumentation-tests:
