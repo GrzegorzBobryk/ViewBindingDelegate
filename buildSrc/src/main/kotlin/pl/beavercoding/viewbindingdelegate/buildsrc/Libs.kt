@@ -5,6 +5,7 @@ package pl.beavercoding.viewbindingdelegate.buildsrc
 object Libs {
     private const val androidGradlePluginVersion = "8.1.2"
     const val androidGradlePlugin = "com.android.tools.build:gradle:$androidGradlePluginVersion"
+    const val ktlintGradlePlugin = "org.jlleitschuh.gradle:ktlint-gradle:11.6.0"
     const val junit = "junit:junit:4.13.2"
 
     object Androidx {
