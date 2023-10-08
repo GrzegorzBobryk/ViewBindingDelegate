@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "monthly"
+      day: "saturday"
+      time: "09:00"
+      timezone: "Europe/Warsaw"
+    target-branch: "develop"
+    reviewers: "GrzegorzBobryk"
