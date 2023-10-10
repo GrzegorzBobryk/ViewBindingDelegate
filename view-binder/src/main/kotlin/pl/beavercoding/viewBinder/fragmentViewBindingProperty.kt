@@ -14,10 +14,23 @@ import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
 /**
+ * Lazy create new [ViewBinding] associated with the [Fragment][this] via delegate without any reflection.
+ */
+@OptIn(BinderInternalApi::class)
+@Suppress("UnusedReceiverParameter")
+inline fun <reified T : ViewBinding> Fragment.viewBinding(vb: ViewBinder<T>): ReadOnlyProperty<Fragment, T> =
+    FragmentViewBindingProperty(vb)
+
+fun interface ViewBinder<T : ViewBinding> {
+    fun bind(view: View): T
+}
+
+/**
  * Property that create, hold and destroy binder object. It must be used from ui thread.
  * Remember to <strong>not</strong> call binder object from [onDestroyView()] event
  * because it will cause recreation and memory leak.
  */
+@BinderInternalApi
 class FragmentViewBindingProperty<T : ViewBinding>(
     private val viewBinder: ViewBinder<T>
 ) : ReadOnlyProperty<Fragment, T> {
@@ -33,7 +46,7 @@ class FragmentViewBindingProperty<T : ViewBinding>(
     }
 
     private fun assertMainThread() {
-        check(isMainThread()) { "View binder called outside of mine thread!" }
+        check(isMainThread()) { "View binder called outside of main thread!" }
     }
 
     private fun isMainThread() = Looper.getMainLooper().thread === Thread.currentThread()
@@ -46,14 +59,3 @@ class FragmentViewBindingProperty<T : ViewBinding>(
         }
     }
 }
-
-fun interface ViewBinder<T : ViewBinding> {
-    fun bind(view: View): T
-}
-
-/**
- * Lazy create new [ViewBinding] associated with the [Fragment][this] via delegate without any reflection.
- */
-@Suppress("UnusedReceiverParameter")
-inline fun <reified T : ViewBinding> Fragment.viewBinding(vb: ViewBinder<T>): ReadOnlyProperty<Fragment, T> =
-    FragmentViewBindingProperty(vb)
