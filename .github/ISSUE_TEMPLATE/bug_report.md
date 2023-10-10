@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Smartphone (please complete the following information):**
  - Device: [e.g. Pixel 3a]
  - OS: [e.g. api 33]
- - Version [e.g. 1.0.5]
+ - Version [e.g. 1.0.7]
 
 **Additional context**
 Add any other context about the problem here.
