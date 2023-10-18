@@ -1,5 +1,4 @@
 import pl.beavercoding.viewbindingdelegate.buildsrc.Config
-import pl.beavercoding.viewbindingdelegate.buildsrc.Libs
 
 plugins {
     id("com.android.application")

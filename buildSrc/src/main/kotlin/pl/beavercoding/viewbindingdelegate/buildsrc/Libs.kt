@@ -1,7 +1,5 @@
 @file:Suppress("unused")
 
-package pl.beavercoding.viewbindingdelegate.buildsrc
-
 object Libs {
     private const val androidGradlePluginVersion = "8.1.2"
     const val androidGradlePlugin = "com.android.tools.build:gradle:$androidGradlePluginVersion"
