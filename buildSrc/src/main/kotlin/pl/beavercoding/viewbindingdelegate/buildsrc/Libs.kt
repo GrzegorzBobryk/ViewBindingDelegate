@@ -1,6 +1,9 @@
 @file:Suppress("unused")
 
 import org.gradle.api.JavaVersion
+import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.project
+import pl.beavercoding.viewbindingdelegate.buildsrc.implementation
 
 object Libs {
     private const val androidGradlePluginVersion = "8.1.2"
@@ -60,4 +63,8 @@ object Libs {
         const val detektPlugin = "io.gitlab.arturbosch.detekt"
     }
 
+}
+
+fun DependencyHandler.viewBinder() {
+    implementation(project(":view-binder"))
 }

@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":view-binder"))
+    viewBinder()
 
     // core
     implementation(Libs.Androidx.core)
