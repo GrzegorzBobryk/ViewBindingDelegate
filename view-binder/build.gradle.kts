@@ -12,18 +12,17 @@ android {
 
     defaultConfig {
         minSdk = Config.minSdk
-        targetSdk = Config.targetSdk
 
         testInstrumentationRunner = Config.testInstrumentationRunner
         consumerProguardFiles("consumer-rules.pro")
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = Libs.java
+        targetCompatibility = Libs.java
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = Libs.java.toString()
     }
 }
 
@@ -41,7 +40,7 @@ afterEvaluate {
 
                 groupId = "com.github.grzegorzbobryk"
                 artifactId = "view-binder"
-                version = "1.0.8-alpha.1"
+                version = "1.0.8-alpha.2"
             }
         }
     }
