@@ -54,6 +54,7 @@ tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
 
+// https://github.com/detekt/detekt/issues/6555
 fun DependencyHandlerScope.detektPlugins(dependencyNotation: Any) {
     add("detektPlugins", dependencyNotation)
 }
