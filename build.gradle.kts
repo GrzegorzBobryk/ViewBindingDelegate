@@ -1,6 +1,7 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
+import pl.beavercoding.viewbindingdelegate.buildsrc.detektPlugins
 
 buildscript {
     repositories {
@@ -52,9 +53,4 @@ tasks.withType<Detekt>().configureEach {
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
-}
-
-// https://github.com/detekt/detekt/issues/6555
-fun DependencyHandlerScope.detektPlugins(dependencyNotation: Any) {
-    add("detektPlugins", dependencyNotation)
 }
