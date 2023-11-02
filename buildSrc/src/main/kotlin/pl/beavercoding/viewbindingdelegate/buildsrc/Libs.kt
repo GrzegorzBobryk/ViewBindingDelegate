@@ -9,7 +9,7 @@ object Libs {
     private const val androidGradlePluginVersion = "8.1.2"
     const val androidGradlePlugin = "com.android.tools.build:gradle:$androidGradlePluginVersion"
     const val junit = "junit:junit:4.13.2"
-    val java = JavaVersion.VERSION_17
+    val java = JavaVersion.VERSION_1_8
 
     object Androidx {
         const val core = "androidx.core:core-ktx:1.12.0"
