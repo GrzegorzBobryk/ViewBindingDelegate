@@ -9,7 +9,7 @@ import pl.beavercoding.viewBinder.safeSetAdapter
 import pl.beavercoding.viewBinder.viewBinding
 import pl.beavercoding.viewbindingdelegate.databinding.FragmentExample1Binding
 
-class ExampleFragment1 : Fragment(R.layout.fragment_example_1) {
+internal class ExampleFragment1 : Fragment(R.layout.fragment_example_1) {
 
     private val binding by viewBinding(FragmentExample1Binding::bind)
     private val adapter by lazy { ExampleAdapter(::handleExampleClick) }
