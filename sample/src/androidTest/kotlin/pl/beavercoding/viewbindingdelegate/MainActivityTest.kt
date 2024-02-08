@@ -3,9 +3,13 @@ package pl.beavercoding.viewbindingdelegate
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.*
-import androidx.test.espresso.assertion.ViewAssertions.*
-import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withParent
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -27,7 +31,7 @@ internal class MainActivityTest {
     var mActivityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun mainActivityTest() {
+    fun basicFlowTestWithCanaryLeakCheck() {
         val resources = InstrumentationRegistry.getInstrumentation().targetContext.resources
 
         allOf(
@@ -37,7 +41,8 @@ internal class MainActivityTest {
 
         val materialButton = onView(
             allOf(
-                withId(R.id.button), withText("next"),
+                withId(R.id.button),
+                withText("next"),
                 childAtPosition(
                     childAtPosition(
                         withId(R.id.nav_host_fragment),
@@ -52,7 +57,8 @@ internal class MainActivityTest {
 
         val textView2 = onView(
             allOf(
-                withId(R.id.hello_world), withText(resources.getString(R.string.example_2)),
+                withId(R.id.hello_world),
+                withText(resources.getString(R.string.example_2)),
                 withParent(withParent(withId(R.id.nav_host_fragment))),
                 isDisplayed()
             )
@@ -61,7 +67,8 @@ internal class MainActivityTest {
 
         val materialButton2 = onView(
             allOf(
-                withId(R.id.button), withText("next"),
+                withId(R.id.button),
+                withText("next"),
                 childAtPosition(
                     childAtPosition(
                         withId(R.id.nav_host_fragment),
@@ -76,7 +83,8 @@ internal class MainActivityTest {
 
         val textView3 = onView(
             allOf(
-                withId(R.id.hello_world), withText(resources.getString(R.string.example_3)),
+                withId(R.id.hello_world),
+                withText(resources.getString(R.string.example_3)),
                 withParent(withParent(withId(R.id.nav_host_fragment))),
                 isDisplayed()
             )
@@ -85,10 +93,7 @@ internal class MainActivityTest {
         LeakAssertions.assertNoLeaks()
     }
 
-    private fun childAtPosition(
-        parentMatcher: Matcher<View>, position: Int
-    ): Matcher<View> {
-
+    private fun childAtPosition(parentMatcher: Matcher<View>, position: Int): Matcher<View> {
         return object : TypeSafeMatcher<View>() {
             override fun describeTo(description: Description) {
                 description.appendText("Child at position $position in parent ")

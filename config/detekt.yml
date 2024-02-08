@@ -2,3 +2,10 @@ formatting:
   MaximumLineLength:
     active: true
     maxLineLength: 130
+  ArgumentListWrapping:
+    active: true
+    maxLineLength: 130
+style:
+  MaxLineLength:
+    active: true
+    maxLineLength: 130

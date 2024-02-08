@@ -1,4 +1,4 @@
-@file:Suppress("unused")
+@file:Suppress("PackageDirectoryMismatch") // this way it will work in project build.gradle.kts
 
 import org.gradle.api.JavaVersion
 import org.gradle.api.artifacts.dsl.DependencyHandler
@@ -6,7 +6,7 @@ import org.gradle.kotlin.dsl.project
 import pl.beavercoding.viewbindingdelegate.buildsrc.implementation
 
 object Libs {
-    private const val androidGradlePluginVersion = "8.2.0"
+    private const val androidGradlePluginVersion = "8.2.2"
     const val androidGradlePlugin = "com.android.tools.build:gradle:$androidGradlePluginVersion"
     const val junit = "junit:junit:4.13.2"
     val java = JavaVersion.VERSION_1_8
