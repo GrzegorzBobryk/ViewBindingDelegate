@@ -7,7 +7,7 @@ import androidx.navigation.fragment.findNavController
 import pl.beavercoding.viewBinder.viewBinding
 import pl.beavercoding.viewbindingdelegate.databinding.FragmentExample2Binding
 
-class ExampleFragment2 : Fragment(R.layout.fragment_example_2) {
+internal class ExampleFragment2 : Fragment(R.layout.fragment_example_2) {
 
     private val binding by viewBinding {
         FragmentExample2Binding.bind(it).also { binding ->

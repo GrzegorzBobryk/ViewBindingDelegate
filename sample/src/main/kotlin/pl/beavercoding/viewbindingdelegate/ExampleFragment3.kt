@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import pl.beavercoding.viewBinder.viewBinding
 import pl.beavercoding.viewbindingdelegate.databinding.FragmentExample3Binding
 
-class ExampleFragment3 : Fragment(R.layout.fragment_example_3) {
+internal class ExampleFragment3 : Fragment(R.layout.fragment_example_3) {
 
     private val binding by viewBinding(FragmentExample3Binding::bind)
 

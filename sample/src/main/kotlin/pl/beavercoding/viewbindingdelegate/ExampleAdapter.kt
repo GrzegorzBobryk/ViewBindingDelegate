@@ -13,8 +13,7 @@ internal class ExampleAdapter(
     private val onExampleClicked: OnExampleClicked
 ) : ListAdapter<Example, ExampleAdapter.ExampleViewHolder>(DiffCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ExampleViewHolder.create(parent, onExampleClicked)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ExampleViewHolder.create(parent, onExampleClicked)
 
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) = holder.bind(getItem(position))
 

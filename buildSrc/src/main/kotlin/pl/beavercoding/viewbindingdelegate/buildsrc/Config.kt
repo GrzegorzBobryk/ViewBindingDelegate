@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package pl.beavercoding.viewbindingdelegate.buildsrc
 
 object Config {

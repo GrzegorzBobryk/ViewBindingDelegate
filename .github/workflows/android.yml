@@ -15,7 +15,7 @@ jobs:
       - name: Ktlint
         run: ./gradlew ktlintCheck
       - name: Detekt
-        run: ./gradlew detekt
+        run: ./gradlew detektMain detektTest
       - name: Build with Gradle
         run: ./gradlew buildDebug
   instrumentation-tests:
