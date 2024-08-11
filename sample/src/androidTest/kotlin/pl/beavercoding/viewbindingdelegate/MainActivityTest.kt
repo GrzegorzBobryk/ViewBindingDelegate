@@ -36,7 +36,7 @@ internal class MainActivityTest {
 
         allOf(
             childAtPosition(hasDescendant(withText(resources.getString(R.string.example_1))), 0),
-            isDisplayed()
+            isDisplayed(),
         )
 
         val materialButton = onView(
@@ -46,12 +46,12 @@ internal class MainActivityTest {
                 childAtPosition(
                     childAtPosition(
                         withId(R.id.nav_host_fragment),
-                        0
+                        0,
                     ),
-                    1
+                    1,
                 ),
-                isDisplayed()
-            )
+                isDisplayed(),
+            ),
         )
         materialButton.perform(click())
 
@@ -60,8 +60,8 @@ internal class MainActivityTest {
                 withId(R.id.hello_world),
                 withText(resources.getString(R.string.example_2)),
                 withParent(withParent(withId(R.id.nav_host_fragment))),
-                isDisplayed()
-            )
+                isDisplayed(),
+            ),
         )
         textView2.check(matches(withText(resources.getString(R.string.example_2))))
 
@@ -72,12 +72,12 @@ internal class MainActivityTest {
                 childAtPosition(
                     childAtPosition(
                         withId(R.id.nav_host_fragment),
-                        0
+                        0,
                     ),
-                    1
+                    1,
                 ),
-                isDisplayed()
-            )
+                isDisplayed(),
+            ),
         )
         materialButton2.perform(click())
 
@@ -86,8 +86,8 @@ internal class MainActivityTest {
                 withId(R.id.hello_world),
                 withText(resources.getString(R.string.example_3)),
                 withParent(withParent(withId(R.id.nav_host_fragment))),
-                isDisplayed()
-            )
+                isDisplayed(),
+            ),
         )
         textView3.check(matches(withText(resources.getString(R.string.example_3))))
         LeakAssertions.assertNoLeaks()

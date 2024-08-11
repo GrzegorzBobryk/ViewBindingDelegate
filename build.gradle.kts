@@ -1,6 +1,5 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
-import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import pl.beavercoding.viewbindingdelegate.buildsrc.detektPlugins
 
 buildscript {
@@ -14,21 +13,15 @@ buildscript {
         classpath(Libs.androidGradlePlugin)
         classpath(Libs.Kotlin.gradlePlugin)
         classpath(Libs.Androidx.Navigation.safeArgsPlugin)
-        classpath(Libs.Ktlint.ktlintGradlePlugin)
         classpath(Libs.Detekt.detektGradlePlugin)
     }
 }
 
 allprojects {
-    apply(plugin = Libs.Ktlint.ktlintPlugin)
     apply(plugin = Libs.Detekt.detektPlugin)
 
     dependencies {
         detektPlugins(Libs.Detekt.detektFormatting)
-    }
-
-    configure<KtlintExtension> {
-        debug.set(true)
     }
 
     configure<DetektExtension> {
@@ -52,5 +45,5 @@ tasks.withType<Detekt>().configureEach {
 }
 
 tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+    delete(rootProject.layout.buildDirectory)
 }

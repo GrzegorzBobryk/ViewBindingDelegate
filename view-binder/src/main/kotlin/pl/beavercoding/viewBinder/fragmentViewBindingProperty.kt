@@ -32,7 +32,7 @@ fun interface ViewBinder<T : ViewBinding> {
  */
 @BinderInternalApi
 class FragmentViewBindingProperty<T : ViewBinding>(
-    private val viewBinder: ViewBinder<T>
+    private val viewBinder: ViewBinder<T>,
 ) : ReadOnlyProperty<Fragment, T> {
     private var viewBinding: T? = null
 

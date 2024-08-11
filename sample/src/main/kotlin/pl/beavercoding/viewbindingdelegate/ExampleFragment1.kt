@@ -21,7 +21,7 @@ internal class ExampleFragment1 : Fragment(R.layout.fragment_example_1) {
         val list = listOf(
             Example(R.id.first, getString(R.string.example_1)),
             Example(R.id.second, getString(R.string.example_1)),
-            Example(R.id.third, getString(R.string.example_1))
+            Example(R.id.third, getString(R.string.example_1)),
         )
         adapter.submitList(list)
 
