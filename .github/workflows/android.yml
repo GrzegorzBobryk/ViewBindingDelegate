@@ -16,19 +16,20 @@ jobs:
         run: ./gradlew detektMain detektTest
       - name: Build with Gradle
         run: ./gradlew buildDebug
-  instrumentation-tests:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up environment for Android build
-        uses: ./.github/actions/prepare-env
-      - name: Instrumentation tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 33
-          target: default
-          arch: x86_64
-          script: ./gradlew connectedCheck --stacktrace
+  # https://github.com/ReactiveCircus/android-emulator-runner/issues/266
+  #  instrumentation-tests:
+  #    runs-on: macos-latest
+  #    steps:
+  #      - uses: actions/checkout@v3
+  #      - name: Set up environment for Android build
+  #        uses: ./.github/actions/prepare-env
+  #      - name: Instrumentation tests
+  #        uses: reactivecircus/android-emulator-runner@v2
+  #        with:
+  #          api-level: 33
+  #          target: default
+  #          arch: x86_64
+  #          script: ./gradlew connectedCheck --stacktrace
   analyze:
     name: CodeQL
     runs-on: ubuntu-latest

@@ -1,4 +1,8 @@
 formatting:
+  # https://detekt.dev/docs/rules/formatting/#maximumlinelength
+  # docks are saying to keep MaxLineLength or MaximumLineLength but it is not working this way.
+  # ExampleAdapter.onCreateViewHolder is not working when we remove option below.
+  # Exceeded max line length (120) [MaximumLineLength]
   MaximumLineLength:
     active: true
     maxLineLength: 130
@@ -23,6 +27,7 @@ style:
   MaxLineLength:
     active: true
     maxLineLength: 130
+    excludeRawStrings: true
   AlsoCouldBeApply:
     active: true
   MandatoryBracesIfStatements:
