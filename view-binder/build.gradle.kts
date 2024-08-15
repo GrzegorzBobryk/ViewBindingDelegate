@@ -40,7 +40,7 @@ afterEvaluate {
 
                 groupId = "com.github.grzegorzbobryk"
                 artifactId = "view-binder"
-                version = "1.0.10-alpha1"
+                version = "1.0.10"
             }
         }
     }
