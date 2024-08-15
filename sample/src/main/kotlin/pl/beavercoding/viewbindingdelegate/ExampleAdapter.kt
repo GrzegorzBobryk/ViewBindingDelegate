@@ -10,7 +10,7 @@ import pl.beavercoding.viewbindingdelegate.databinding.RowExampleBinding
 private typealias OnExampleClicked = (Example) -> Unit
 
 internal class ExampleAdapter(
-    private val onExampleClicked: OnExampleClicked
+    private val onExampleClicked: OnExampleClicked,
 ) : ListAdapter<Example, ExampleAdapter.ExampleViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ExampleViewHolder.create(parent, onExampleClicked)
@@ -19,7 +19,7 @@ internal class ExampleAdapter(
 
     internal class ExampleViewHolder private constructor(
         private val binding: RowExampleBinding,
-        private val onExampleClicked: OnExampleClicked
+        private val onExampleClicked: OnExampleClicked,
     ) : RecyclerView.ViewHolder(binding.root) {
 
         internal fun bind(example: Example) {
@@ -34,7 +34,7 @@ internal class ExampleAdapter(
         companion object {
             internal fun create(
                 parent: ViewGroup,
-                onExampleClicked: OnExampleClicked
+                onExampleClicked: OnExampleClicked,
             ): ExampleViewHolder {
                 val binding = RowExampleBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 return ExampleViewHolder(binding, onExampleClicked)
