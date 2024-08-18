@@ -4,9 +4,9 @@ formatting:
   # ExampleAdapter.onCreateViewHolder is not working when we remove option below.
   # Exceeded max line length (120) [MaximumLineLength]
   # https://github.com/detekt/detekt/issues/7551
-  MaximumLineLength:
-    active: true
-    maxLineLength: 130
+  #  MaximumLineLength:
+  #    active: true
+  #    maxLineLength: 130
   ArgumentListWrapping:
     active: true
     maxLineLength: 130
@@ -25,6 +25,7 @@ formatting:
   TypeParameterListSpacing:
     active: true
 style:
+  # `excludeRawStrings: true` is set here
   MaxLineLength:
     active: true
     maxLineLength: 130
