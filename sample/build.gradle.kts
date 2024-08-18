@@ -3,7 +3,6 @@ import pl.beavercoding.viewbindingdelegate.buildsrc.Config
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
 }
 
