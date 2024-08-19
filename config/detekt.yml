@@ -1,3 +1,15 @@
+coroutines:
+  GlobalCoroutineUsage:
+    active: true
+  RedundantSuspendModifier:
+    active: true
+  SuspendFunWithCoroutineScopeReceiver:
+    active: true
+  SuspendFunWithFlowReturnType:
+    active: true
+exceptions:
+  ObjectExtendsThrowable:
+    active: true
 formatting:
   # https://detekt.dev/docs/rules/formatting/#maximumlinelength
   # docks are saying to keep MaxLineLength or MaximumLineLength but it is not working this way.
@@ -10,19 +22,57 @@ formatting:
   ArgumentListWrapping:
     active: true
     maxLineLength: 130
-  TrailingCommaOnCallSite:
+  EnumEntryNameCase:
     active: true
-  TrailingCommaOnDeclarationSite:
+  EnumWrapping:
     active: true
   IfElseBracing:
     active: true
   ParameterListSpacing:
+    active: true
+  PropertyName:
+    active: true
+  TrailingCommaOnCallSite:
+    active: true
+  TrailingCommaOnDeclarationSite:
     active: true
   TryCatchFinallySpacing:
     active: true
   TypeArgumentListSpacing:
     active: true
   TypeParameterListSpacing:
+    active: true
+naming:
+  BooleanPropertyNaming:
+    active: true
+    allowedPattern: '^(is|has|are|should|can)'
+  ForbiddenClassName:
+    active: true
+    forbiddenName:
+      - Helper
+  NonBooleanPropertyPrefixedWithIs:
+    active: true
+performance:
+  CouldBeSequence:
+    active: true
+potential-bugs:
+  CastToNullableType:
+    active: true
+  DontDowncastCollectionTypes:
+    active: true
+  ElseCaseInsteadOfExhaustiveWhen:
+    active: true
+  MissingPackageDeclaration:
+    active: true
+  NullableToStringCall:
+    active: true
+  NullCheckOnMutableProperty:
+    active: true
+  PropertyUsedBeforeDeclaration:
+    active: true
+  UnconditionalJumpStatementInLoop:
+    active: true
+  UnnecessaryNotNullCheck:
     active: true
 style:
   MaxLineLength:
@@ -31,16 +81,27 @@ style:
     excludeRawStrings: true
   AlsoCouldBeApply:
     active: true
-  MandatoryBracesIfStatements:
+  BracesOnIfStatements:
     active: true
-    consistent: true
+    singleLine: 'consistent'
+    multiLine: 'always'
+  BracesOnWhenStatements:
+    active: true
+    singleLine: 'necessary'
+    multiLine: 'necessary'
   CanBeNonNullable:
     active: true
   ClassOrdering:
     active: true
   CollapsibleIfStatements:
     active: true
+  DoubleNegativeLambda:
+    active: true
+  EqualsOnSignatureLine:
+    active: true
   ExplicitCollectionElementAccessMethod:
+    active: true
+  ExpressionBodySyntax:
     active: true
   ForbiddenAnnotation:
     active: true
@@ -48,13 +109,21 @@ style:
     active: true
   NewLineAtEndOfFile:
     active: true
+  NoTabs:
+    active: true
+  NullableBooleanCheck:
+    active: true
   OptionalUnit:
+    active: true
+  RedundantVisibilityModifierRule:
     active: true
   SpacingBetweenPackageAndImports:
     active: true
   TrailingWhitespace:
     active: true
   UnderscoresInNumericLiterals:
+    active: true
+  UnnecessaryAnnotationUseSiteTarget:
     active: true
   UnnecessaryBackticks:
     active: true
@@ -70,33 +139,7 @@ style:
     active: true
   UseIfEmptyOrIfBlank:
     active: true
+  UseIfInsteadOfWhen:
+    active: true
   UseSumOfInsteadOfFlatMapSize:
-    active: true
-coroutines:
-  GlobalCoroutineUsage:
-    active: true
-  RedundantSuspendModifier:
-    active: true
-  SuspendFunWithCoroutineScopeReceiver:
-    active: true
-  SuspendFunWithFlowReturnType:
-    active: true
-exceptions:
-  ObjectExtendsThrowable:
-    active: true
-performance:
-  CouldBeSequence:
-    active: true
-potential-bugs:
-  CastToNullableType:
-    active: true
-  ElseCaseInsteadOfExhaustiveWhen:
-    active: true
-  MissingPackageDeclaration:
-    active: true
-  NullCheckOnMutableProperty:
-    active: true
-  PropertyUsedBeforeDeclaration:
-    active: true
-  UnnecessaryNotNullCheck:
     active: true
