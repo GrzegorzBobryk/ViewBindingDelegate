@@ -22,6 +22,11 @@ internal class ExampleFragment3 : Fragment(R.layout.fragment_example_3) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.helloWorld.text = getString(R.string.example_3)
+        binding.helloWorld.text = TEST_STRING
+    }
+
+    companion object {
+        private const val TEST_STRING =
+            """C:\Repository\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\test\some_file.pdf"""
     }
 }
